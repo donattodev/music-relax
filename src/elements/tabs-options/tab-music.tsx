@@ -1,7 +1,12 @@
 import Image from 'next/image'
 import { Heart } from 'lucide-react'
-import foto from '../../../public/image1.jpg'
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
+
+import foto from '../../../public/image1.jpg'
+import foto1 from '../../../public/image2.jpg'
+import { SpotifyIcon } from '@/components/icons/spotify'
+import Link from 'next/link'
+import { YoutubeIcon } from '@/components/icons/youtube'
 
 export function TabMusic() {
   return (
@@ -22,14 +27,38 @@ export function TabMusic() {
               <span className="text-sm font-bold uppercase text-zinc-500">
                 HipHop
               </span>
-              <Heart className="w-5 text-[#047A95]" />
+
+              <ul className="flex items-center gap-4">
+                <li>
+                  {' '}
+                  <Heart className="w-4 text-[#047A95]" />
+                </li>
+
+                <li>
+                  <Link
+                    href="https://open.spotify.com/intl-pt/album/17VsdbGONVYMYrIxOemkP0"
+                    target="_blank"
+                  >
+                    <SpotifyIcon className="w-4" />
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    href="https://www.youtube.com/@MusicRelaxCanal"
+                    target="_blank"
+                  >
+                    <YoutubeIcon className="w-4" />
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
 
         <div>
           <Image
-            src={foto}
+            src={foto1}
             width={450}
             height={450}
             alt=""
@@ -42,7 +71,30 @@ export function TabMusic() {
               <span className="text-sm font-bold uppercase text-zinc-500">
                 HipHop
               </span>
-              <Heart className="w-5 text-[#047A95]" />
+              <ul className="flex items-center gap-4">
+                <li>
+                  {' '}
+                  <Heart className="w-4 text-[#047A95]" />
+                </li>
+
+                <li>
+                  <Link
+                    href="https://open.spotify.com/intl-pt/album/17VsdbGONVYMYrIxOemkP0"
+                    target="_blank"
+                  >
+                    <SpotifyIcon className="w-4" />
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    href="https://www.youtube.com/@MusicRelaxCanal"
+                    target="_blank"
+                  >
+                    <YoutubeIcon className="w-4" />
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
