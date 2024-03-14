@@ -1,8 +1,9 @@
 import '../styles/globals.css'
 import { ReactNode } from 'react'
 import type { Metadata } from 'next'
-import { Roboto, Bai_Jamjuree as Bai } from 'next/font/google'
 import { Navbar } from '@/elements/navbar'
+import { Analytics } from '@vercel/analytics/react'
+import { Roboto, Bai_Jamjuree as Bai } from 'next/font/google'
 import { ThemeProvider } from '@/components/themes/theme-provider'
 
 const roboto = Roboto({
@@ -40,6 +41,7 @@ export default function RootLayout({
           <main className="my-12 flex w-full flex-col items-center justify-center gap-8 max-lg:px-6">
             <Navbar />
             {children}
+            <Analytics />
           </main>
         </ThemeProvider>
       </body>
