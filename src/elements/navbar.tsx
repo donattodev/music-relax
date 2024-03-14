@@ -30,13 +30,16 @@ export function Navbar() {
         </li>
 
         <li>
-          <Link href="/" target="_blank">
+          <Link
+            href="https://open.spotify.com/intl-pt/album/17VsdbGONVYMYrIxOemkP0"
+            target="_blank"
+          >
             <SpotifyIcon />
           </Link>
         </li>
 
         <li>
-          <Link href="/" target="_blank">
+          <Link href="https://www.youtube.com/@MusicRelaxCanal" target="_blank">
             <YoutubeIcon />
           </Link>
         </li>

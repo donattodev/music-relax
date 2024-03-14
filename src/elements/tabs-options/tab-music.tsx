@@ -37,67 +37,7 @@ export function TabMusic() {
           />
 
           <div className="mt-2 flex flex-col gap-1">
-            <span className="text-lg font-bold">Ressonância Celestial</span>
-            <div className="flex justify-between">
-              <span className="text-sm font-bold uppercase text-zinc-500">
-                HipHop
-              </span>
-              <Heart className="w-5 text-[#047A95]" />
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <Image
-            src={foto}
-            width={450}
-            height={450}
-            alt=""
-            className="w-60 rounded-t-lg hover:scale-105"
-          />
-
-          <div className="mt-2 flex flex-col gap-1">
-            <span className="text-lg font-bold">Ressonância Celestial</span>
-            <div className="flex justify-between">
-              <span className="text-sm font-bold uppercase text-zinc-500">
-                HipHop
-              </span>
-              <Heart className="w-5 text-[#047A95]" />
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <Image
-            src={foto}
-            width={450}
-            height={450}
-            alt=""
-            className="w-60 rounded-t-lg hover:scale-105"
-          />
-
-          <div className="mt-2 flex flex-col gap-1">
-            <span className="text-lg font-bold">Ressonância Celestial</span>
-            <div className="flex justify-between">
-              <span className="text-sm font-bold uppercase text-zinc-500">
-                HipHop
-              </span>
-              <Heart className="w-5 text-[#047A95]" />
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <Image
-            src={foto}
-            width={450}
-            height={450}
-            alt=""
-            className="w-60 rounded-t-lg hover:scale-105"
-          />
-
-          <div className="mt-2 flex flex-col gap-1">
-            <span className="text-lg font-bold">Ressonância Celestial</span>
+            <span className="text-lg font-bold">Alvorecer Melódico</span>
             <div className="flex justify-between">
               <span className="text-sm font-bold uppercase text-zinc-500">
                 HipHop
