@@ -101,3 +101,24 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #262626;
 }
+
+
+@keyframes blink {
+  from {
+      opacity: 0;
+  }
+}
+
+@keyframes moveRight {
+  0% {
+      transform: translateX(-100%);
+  }
+}
+
+.move {
+  animation: moveRight .8s linear;
+}
+
+.element {
+  animation: blink .9s ;
+}

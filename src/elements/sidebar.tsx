@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 export function Sidebar() {
   return (
-    <div className="col-span-2 flex w-full flex-col gap-6 max-sm:col-span-6">
+    <div className="move col-span-2 flex w-full flex-col gap-6 max-sm:col-span-6">
       <div className="w-full rounded-lg border-2 border-zinc-500/40 p-6">
         <ul className="flex flex-col gap-6 text-sm uppercase">
           <li className="flex items-center gap-3 font-bold">

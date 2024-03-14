@@ -3,7 +3,7 @@ import { TabMusic } from './tabs-options/tab-music'
 
 export function TabsHome() {
   return (
-    <div className="col-span-6 rounded-md border-2 border-zinc-500/40 p-6">
+    <div className="move col-span-6 rounded-md border-2 border-zinc-500/40 p-6">
       <Tabs defaultValue="music" className="w-full">
         <TabsList>
           <TabsTrigger value="music" className="font-bold uppercase">

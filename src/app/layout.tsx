@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${roboto.variable} ${bai.variable} bg-assets bg-cover bg-no-repeat font-sans antialiased`}
+        className={`${roboto.variable} ${bai.variable} element  bg-assets bg-cover bg-no-repeat font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"

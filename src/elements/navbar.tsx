@@ -5,7 +5,7 @@ import { LoginDialog } from './login/login-dialog'
 
 export function Navbar() {
   return (
-    <nav className="mx-auto flex w-full max-w-6xl justify-between rounded-lg border-2 border-zinc-500/40 px-8 py-6 max-sm:px-4">
+    <nav className="move mx-auto flex w-full max-w-6xl justify-between rounded-lg border-2 border-zinc-500/40 px-8 py-6 max-sm:px-4">
       <Link
         href="/"
         className="color font-title text-2xl font-bold uppercase leading-5"
