@@ -13,4 +13,12 @@ const options = {
   },
 }
 
-export default NextAuth(options)
+const handler = NextAuth(options)
+
+export default handler
+
+export const getServerSideProps = async (context) => {
+}
+
+export const apiHandler = async (req, res) => {
+}
