@@ -8,6 +8,6 @@ const nextConfig = {
 module.exports = {
   ...nextConfig,
   env: {
-    NEXTAUTH_SECRET: 'your-secret-string-here',
+    NEXTAUTH_SECRET: 'ajsfkjakldjflkdjsflkaj',
   },
 }
