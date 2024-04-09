@@ -1,24 +1,17 @@
 import NextAuth from 'next-auth/next'
-import GoogleProvider from 'next-auth/providers/google'
+import Providers from 'next-auth/providers'
 
 const options = {
   providers: [
-    GoogleProvider({
+    Providers.Google({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
+    // Adicione outros provedores aqui, se necessário
   ],
   pages: {
-    signIn: '/',
+    signIn: '/', // Página onde os usuários devem ser redirecionados para fazer login
   },
 }
 
-const handler = NextAuth(options)
-
-export default handler
-
-export const getServerSideProps = async (context) => {
-}
-
-export const apiHandler = async (req, res) => {
-}
+export default NextAuth(options)
