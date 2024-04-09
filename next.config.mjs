@@ -8,6 +8,6 @@ const nextConfig = {
 module.exports = {
   ...nextConfig,
   env: {
-    NEXTAUTH_SECRET: 'ajsfkjakldjflkdjsflkaj',
+    NEXTAUTH_SECRET: 'lkjsdafadksjfaksdjfhadskjfhasdfjkahsl',
   },
 }
