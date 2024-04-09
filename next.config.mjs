@@ -5,4 +5,9 @@ const nextConfig = {
   },
 }
 
-export default nextConfig
+module.exports = {
+  ...nextConfig,
+  env: {
+    NEXTAUTH_SECRET: 'your-secret-string-here',
+  },
+}
