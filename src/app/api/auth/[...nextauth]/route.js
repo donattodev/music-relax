@@ -1,3 +1,5 @@
+// src/app/api/auth/[...nextauth]/route.js
+
 import NextAuth from 'next-auth/next'
 import GoogleProvider from 'next-auth/providers/google'
 
@@ -13,7 +15,9 @@ export const authOptions = {
   },
 }
 
-import NextAuth from 'next-auth/next'
+// pages/api/auth/[...nextauth].js
+
+import { NextAuth } from './route'
 import { authOptions } from './route'
 
 const handler = NextAuth(authOptions)
