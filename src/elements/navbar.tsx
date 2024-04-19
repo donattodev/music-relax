@@ -12,6 +12,7 @@ export function Navbar() {
       >
         Music Relax
       </Link>
+
       <ul className="flex items-center gap-6 text-sm font-bold uppercase max-sm:hidden">
         <li>
           <Link href="/">Home</Link>
@@ -42,6 +43,12 @@ export function Navbar() {
           <Link href="https://www.youtube.com/@MusicRelaxCanal" target="_blank">
             <YoutubeIcon />
           </Link>
+        </li>
+      </ul>
+
+      <ul className="md:hidden">
+        <li>
+          <SignInButton />
         </li>
       </ul>
     </nav>
