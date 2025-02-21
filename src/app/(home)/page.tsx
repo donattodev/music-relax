@@ -12,7 +12,7 @@ export default function Home() {
       <div className="flex flex-col w-1/2 2xl:p-16 p-12 max-sm:p-6">
         <Navbar />
 
-        <section className="flex flex-col 2xl:w-[442px] 2xl:mt-28 w-[464px] mt-12 gap-8 max-sm:w-80 max-sm:mt-10">
+        <section className="flex flex-col 2xl:w-[442px] 2xl:mt-28 w-[464px] mt-12 gap-8 max-sm:w-80">
           <Logotipo className="w-72 max-sm:w-56" />
 
           <div className="flex flex-col gap-6 w-full">
