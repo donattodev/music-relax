@@ -34,21 +34,30 @@ export function Navbar() {
         <nav className="p-6 text-neutral-100 max-sm:text-primary-900">
           <ul className="space-y-4">
             <li>
-              <Link href="#" className="flex items-center gap-3">
-                <Spotify className='size-6'fill="#ffffff" />
-                <span className='font-bold text-lg'>Spotify</span>
+              <Link
+                href="https://open.spotify.com/intl-pt/album/17VsdbGONVYMYrIxOemkP0?si=L5PXDwWeQXmoqE2WmHY6cw&nd=1&dlsi=a7b57ee6cb144b97"
+                className="flex items-center gap-3"
+              >
+                <Spotify className="size-6" fill="#ffffff" />
+                <span className="font-bold text-lg">Spotify</span>
               </Link>
             </li>
             <li>
-              <Link href="#" className="flex items-center gap-3">
-                <Instagram className='size-6' fill="#ffffff" />
-                <span className='font-bold text-lg'>Instagram</span>
+              <Link
+                href="https://www.instagram.com/musicrelax_br"
+                className="flex items-center gap-3"
+              >
+                <Instagram className="size-6" fill="#ffffff" />
+                <span className="font-bold text-lg">Instagram</span>
               </Link>
             </li>
             <li>
-              <Link href="#" className="flex items-center gap-3">
-                <Youtube className='size-6' fill="#ffffff" />
-                <span className='font-bold text-lg'>Youtube</span>
+              <Link
+                href="https://www.youtube.com/@musicrelaxcanal"
+                className="flex items-center gap-3"
+              >
+                <Youtube className="size-6" fill="#ffffff" />
+                <span className="font-bold text-lg">Youtube</span>
               </Link>
             </li>
           </ul>

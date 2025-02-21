@@ -18,26 +18,39 @@ export default function Home() {
           <div className="flex flex-col gap-6 w-full">
             <p className="text-white font-sans font-light text-lg max-sm:text-base max-sm:text-justify">
               Music Relax é o projeto instrumental de{' '}
-              <strong className="font-semibold">Felippe Donatto</strong>, criado
-              para quem busca harmonia e inspiração. Com melodias envolventes e
-              suaves, a guitarra se torna um portal para a paz.
+              <strong className="font-semibold">
+                <Link href="https://donattodev.com.br/links" target='_blank'>
+                  Felippe Donatto
+                </Link>
+              </strong>
+              , criado para quem busca harmonia e inspiração. Com melodias
+              envolventes e suaves, a guitarra se torna um portal para a paz.
             </p>
 
             <ul className="flex gap-8">
               <li>
-                <Link href="#" target="_blank">
+                <Link
+                  href="https://www.instagram.com/musicrelax_br"
+                  target="_blank"
+                >
                   <Instagram className="size-6" fill="#fff" />
                 </Link>
               </li>
 
               <li>
-                <Link href="#" target="_blank">
+                <Link
+                  href="https://open.spotify.com/intl-pt/album/17VsdbGONVYMYrIxOemkP0?si=L5PXDwWeQXmoqE2WmHY6cw&nd=1&dlsi=a7b57ee6cb144b97"
+                  target="_blank"
+                >
                   <Spotify className="size-6" fill="#fff" />
                 </Link>
               </li>
 
               <li>
-                <Link href="#" target="_blank">
+                <Link
+                  href="https://www.youtube.com/@musicrelaxcanal"
+                  target="_blank"
+                >
                   <Youtube className="size-6" fill="#fff" />
                 </Link>
               </li>

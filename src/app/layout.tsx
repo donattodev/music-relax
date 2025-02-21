@@ -17,7 +17,19 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'Music relax',
+  generator: 'Next.js',
+  applicationName: 'Music Relax',
+  description:
+    'Music Relax é o projeto instrumental de Felippe Donatto, criado para quem busca harmonia e inspiração. Com melodias envolventes e suaves, a guitarra se torna um portal para a paz.',
+  creator: 'Felippe Donatto',
+  authors: [{ name: 'Felippe Donatto', url: 'https://donattodev.com.br' }],
+  keywords: [
+    'Next.js',
+    'React',
+    'JavaScript',
+    'tailwind Css V4',
+    'Tailwind Css',
+  ],
 }
 
 export default function RootLayout({
@@ -26,8 +38,11 @@ export default function RootLayout({
   children: ReactNode
 }>) {
   return (
-    // biome-ignore lint/a11y/useValidLang: <explanation>
-    <html lang="pt-br" className={`${oxanium.variable} ${montserrat.variable} font-sans antialiased`}>
+    <html
+      // biome-ignore lint/a11y/useValidLang: <explanation>
+      lang="pt-br"
+      className={`${oxanium.variable} ${montserrat.variable} font-sans antialiased`}
+    >
       <body className="bg-gradient-to-r to-primary from-primary-900 ">
         {children}
         <Player />
