@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main className="flex min-h-dvh w-full ">
+    <main className="flex min-h-dvh w-full bg-[url(/text-bgf.svg)] bg-cover bg-center">
       <div className="flex flex-col w-1/2 2xl:p-16 p-12 max-sm:p-6">
         <Navbar />
 
