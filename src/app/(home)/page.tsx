@@ -2,7 +2,7 @@ import { Instagram } from '@/components/icons/social/instagram'
 import { Spotify } from '@/components/icons/social/spotify'
 import { Youtube } from '@/components/icons/social/youtube'
 import { Logotipo } from '@/components/logo'
-import { Menu } from '@/components/menu'
+import { Navbar } from '@/components/navbar/navbar'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className="flex min-h-dvh w-full ">
       <div className="flex flex-col w-1/2 2xl:p-16 p-12 max-sm:p-6">
-        <Menu className="size-6" />
+        <Navbar />
 
         <section className="flex flex-col 2xl:w-[442px] 2xl:mt-28 w-[464px] mt-12 gap-8 max-sm:w-80 max-sm:mt-10">
           <Logotipo className="w-72 max-sm:w-56" />
@@ -26,19 +26,19 @@ export default function Home() {
             <ul className="flex gap-8">
               <li>
                 <Link href="#" target="_blank">
-                  <Instagram className="size-6" />
+                  <Instagram className="size-6" fill="#fff" />
                 </Link>
               </li>
 
               <li>
                 <Link href="#" target="_blank">
-                  <Spotify className="size-6" />
+                  <Spotify className="size-6" fill="#fff" />
                 </Link>
               </li>
 
               <li>
                 <Link href="#" target="_blank">
-                  <Youtube className="size-6" />
+                  <Youtube className="size-6" fill="#fff" />
                 </Link>
               </li>
             </ul>

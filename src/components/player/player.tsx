@@ -7,7 +7,7 @@ import { Previous } from '../icons/previous'
 
 export function Player() {
   return (
-    <div className="fixed bottom-0 flex justify-between items-center w-full py-4 2xl:py-8 px-8 bg-white/20 rounded-t-2xl max-sm:flex-col max-sm:gap-4 max-sm:px-4">
+    <div className="fixed bottom-0 flex justify-between items-center w-full py-4 2xl:py-8 px-8 bg-white/20 backdrop-blur-lg rounded-t-2xl max-sm:flex-col max-sm:gap-4 max-sm:px-4">
       <div className="flex items-center gap-8 max-sm:gap-5">
         <Image src={cover} className="rounded-md" alt="" />
 
@@ -15,7 +15,7 @@ export function Player() {
           <span className="text-xl font-semibold uppercase">
             Ressonância Celestial
           </span>
-          <span className="text-primary font-bold">Felippe Donatto</span>
+          <span className="text-primary font-bold font-destaque">Felippe Donatto</span>
         </div>
       </div>
 
