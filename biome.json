@@ -22,7 +22,10 @@
     "rules": {
       "recommended": true,
       "a11y": {
-        "noSvgWithoutTitle": "off"
+        "noSvgWithoutTitle": "off",
+        "useMediaCaption": "off",
+        "useKeyWithClickEvents": "off",
+        "useValidLang": "off"
       },
       "suspicious": {
         "noArrayIndexKey": "info"

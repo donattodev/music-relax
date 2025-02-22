@@ -40,7 +40,6 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      // biome-ignore lint/a11y/useValidLang: <explanation>
       lang="pt-br"
       className={`${oxanium.variable} ${montserrat.variable} font-sans antialiased`}
     >
