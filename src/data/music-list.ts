@@ -12,13 +12,13 @@ export const music: MusicTypes[] = [
     music: 'Ressonância Celestial',
     author: 'Felippe Donatto',
     album: 'Ecos',
-    url: '/app/assets/audio/ressonancia-celestial.mpeg',
+    url: '/audio/ressonancia-celestial.mpeg',
   },
   {
     id: 2,
     music: 'Alvorecer Melódico',
     author: 'Felippe Donatto',
     album: 'Ecos',
-    url: '/app/assets/audio/alvorecer-melodico.mpeg',
+    url: '/audio/alvorecer-melodico.mpeg',
   },
 ]
