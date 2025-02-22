@@ -6,7 +6,7 @@ Music Relax é o projeto instrumental de Felippe Donatto, criado para <br/> quem
 
 ![Image](https://github.com/user-attachments/assets/1e51706f-6640-469c-9760-74ab39790770)
 
-🔗 [Acesse o projeto online](https://music-relax.vercel.app/)
+🔗 [Acesse o projeto online](https://music-relax.vercel.app/) <br/>
 🔗 [Acesse o figma do projeto](https://www.figma.com/community/file/1474779037730638943)
 
 ## 🛠 Tecnologias Utilizadas

@@ -17,6 +17,7 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
+  title: 'Music Relax',
   generator: 'Next.js',
   applicationName: 'Music Relax',
   description:
@@ -45,6 +46,7 @@ export default function RootLayout({
     >
       <body className="bg-gradient-to-r to-primary from-primary-900 ">
         {children}
+
         <Player />
       </body>
     </html>
