@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Montserrat, Oxanium } from 'next/font/google'
 import type { ReactNode } from 'react'
 import '../styles/globals.css'
-import { Player } from '@/components/player/player'
 
 const oxanium = Oxanium({
   subsets: ['latin'],
@@ -43,10 +42,8 @@ export default function RootLayout({
       lang="pt-br"
       className={`${oxanium.variable} ${montserrat.variable} font-sans antialiased`}
     >
-      <body className="bg-gradient-to-r to-primary from-primary-900 ">
+      <body>
         {children}
-
-        <Player />
       </body>
     </html>
   )
