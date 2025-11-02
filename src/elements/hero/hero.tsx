@@ -1,7 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { Heading } from '@/components/ui/heading'
 import { Text } from '@/components/ui/text'
-import { HeartPulse } from 'lucide-react'
 import { LikeHeroHeart } from '../like/like-hero-heart'
 import { Topbar } from '../navs/topbar'
 

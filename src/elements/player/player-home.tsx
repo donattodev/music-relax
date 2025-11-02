@@ -12,6 +12,7 @@ import {
   SkipForward,
   X,
 } from 'lucide-react'
+import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 
 export function PlayerHome() {
@@ -83,9 +84,11 @@ export function PlayerHome() {
         <div className="flex flex-col gap-6 text-center w-full items-center">
           <div className="w-full h-56 rounded-md bg-neutral-800 overflow-hidden max-sm:hidden">
             {currentTrack.url_album && (
-              <img
-                src={currentTrack.url_album}
+              <Image
+                src={currentTrack.url_album.replace(/^\.\//, '/')}
                 alt={currentTrack.album}
+                width={500}
+                height={500}
                 className="w-full h-full object-cover"
               />
             )}
