@@ -4,6 +4,9 @@ import { databaseMusic } from '@/data/database-music'
 import Link from 'next/link'
 
 export function TopGenres() {
+  const genresToShow = databaseMusic.slice(0, 5)
+  const total = genresToShow.length
+
   return (
     <Box className="col-span-2 flex flex-col gap-8 max-sm:hidden">
       <div className="flex justify-between w-full">
@@ -14,9 +17,9 @@ export function TopGenres() {
       </div>
 
       <ul className="grid grid-cols-2 gap-4 w-full">
-        {databaseMusic.map(({ id, genres }, index) => {
-          const isLast = index === databaseMusic.length - 1
-          const isOdd = databaseMusic.length % 2 !== 0
+        {genresToShow.map(({ id, genres }, index) => {
+          const isLast = index === total - 1
+          const isOdd = total % 2 !== 0
           const shouldSpanFull = isOdd && isLast
 
           const colors = [

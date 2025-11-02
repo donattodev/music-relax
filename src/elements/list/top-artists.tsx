@@ -32,7 +32,7 @@ export function TopArtists() {
     if (!isDown) return
     e.preventDefault()
     const x = e.pageX - (scrollRef.current?.offsetLeft ?? 0)
-    const walk = (x - startX) * 2 
+    const walk = (x - startX) * 2
     if (scrollRef.current) scrollRef.current.scrollLeft = scrollLeft - walk
   }
 
@@ -53,17 +53,14 @@ export function TopArtists() {
         onMouseUp={onMouseUp}
         onMouseMove={onMouseMove}
       >
-        {databaseMusic.map(({ id, artists, album, url_album }) => (
+        {databaseMusic.slice(0, 5).map(({ id, artists, album, url_album_minimal }) => (
           <Card.Root key={id}>
-            {url_album ? (
-              <div className="size-32 rounded-md bg-neutral-800 animate-pulse" />
-            ) : (
-              <Card.Cover
-                url={url_album}
-                alt={`Capa do álbum ${album}`}
-                src={`${url_album}`}
-              />
-            )}
+            <Card.Cover
+              url={url_album_minimal}
+              alt={`Capa do álbum ${album}`}
+              src={`${url_album_minimal}`}
+            />
+
             <Card.Artist artist={artists.join(', ')} album={album} />
           </Card.Root>
         ))}

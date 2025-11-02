@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import type { ComponentProps, ReactNode } from 'react'
 import { Text } from './text'
 
@@ -14,7 +13,7 @@ export function Root({ children, ...props }: RootCardProps) {
   )
 }
 
-type CoverCardProps = ComponentProps<typeof Image> & {
+type CoverCardProps = ComponentProps<'img'> & {
   url: string
 }
 
@@ -22,14 +21,7 @@ export function Cover({ url, ...props }: CoverCardProps) {
   return (
     <>
       {url ? (
-        <Image
-          {...props}
-          src={url}
-          alt=""
-          width={150}
-          height={150}
-          className="size-32 rounded-md"
-        />
+        <img {...props} src={url} alt="" className="size-32 rounded-md" />
       ) : (
         <div className="size-32 bg-background-950 rounded-md" />
       )}

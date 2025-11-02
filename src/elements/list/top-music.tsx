@@ -2,7 +2,6 @@ import { Box } from '@/components/ui/box'
 import { Text } from '@/components/ui/text'
 import { databaseMusic } from '@/data/database-music'
 import { Plus } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 
 const formatDuration = (seconds: number) => {
@@ -25,20 +24,14 @@ export function TopMusic() {
         <div className="flex flex-wrap gap-4 w-full">
           {databaseMusic
             .slice(0, 3)
-            .map(({ id, artists, album, url_album, duration }) => (
+            .map(({ id, artists, album, url_album_minimal, duration }) => (
               <li className="flex justify-between w-full h-16" key={id}>
                 <div className="flex items-center gap-3">
-                  {url_album ? (
-                    <div className="size-12 rounded-md bg-neutral-800 animate-pulse" />
-                  ) : (
-                    <Image
-                      src={url_album}
-                      width={100}
-                      height={100}
-                      className="size-12 rounded-md"
-                      alt=""
-                    />
-                  )}
+                  <img
+                    src={url_album_minimal}
+                    className="size-12 rounded-md"
+                    alt=""
+                  />
 
                   <div className="flex flex-col">
                     <span>{album}</span>

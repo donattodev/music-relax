@@ -88,7 +88,7 @@ export default function Sidebar({ onCollapseChange }: SidebarProps) {
         </ul>
 
         <ul className="flex flex-col gap-5">
-          <li className="mb-1.5">
+          <li className="my-2 font-bold">
             {sidebarCollapsed ? '' : <h2>Playlist</h2>}
           </li>
 

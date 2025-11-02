@@ -43,12 +43,16 @@ function TextLink({ children, isActive, className }: TextLinkProps) {
 export type IconLinkProps = {
   Icon: ElementType
   isActive?: boolean
+  className?: string
 }
 
-function IconLink({ Icon, isActive }: IconLinkProps) {
+function IconLink({ Icon, isActive, className }: IconLinkProps) {
   return (
     <Icon
-      className={`w-[18px] h-[18px] ${isActive ? 'text-primary' : 'text-white hover:text-primary duration-200 transition-all'}`}
+      className={clsx(
+        `w-[18px] h-[18px]  ${isActive ? 'text-primary' : 'text-white hover:text-primary duration-200 transition-all'},`,
+        className
+      )}
     />
   )
 }

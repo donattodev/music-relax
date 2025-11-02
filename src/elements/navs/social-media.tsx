@@ -6,14 +6,14 @@ import Link from 'next/link'
 
 export function SocialMedia() {
   return (
-    <ul className="flex w-full justify-start gap-6">
+    <ul className="flex w-full justify-start gap-6 mt-4">
       <Link href="https://www.instagram.com/musicrelax_br/" target="_blank">
         <li>
           <Instagram className="w-5" />
         </li>
       </Link>
 
-      <Link href="https://github.com/donattodev" target="_blank">
+      <Link href="https://github.com/donattodev/music-relax" target="_blank">
         <li>
           <Github className="w-5" />
         </li>
@@ -24,7 +24,10 @@ export function SocialMedia() {
           <YouTube className="w-5" />
         </li>
       </Link>
-      <Link href="https://open.spotify.com/intl-pt/artist/5SAkIN3MFTW994ukhn1C67?fbclid=PAZXh0bgNhZW0CMTEAAaf1jKhuyBLTSjCXoZ_j5OmoRGCYHmtvFKBx330kpfOVZ5m40QARucv8N35P0g_aem_MI8IkCsPw_atkdmiv5yH5A">
+      <Link
+        href="https://open.spotify.com/intl-pt/artist/5SAkIN3MFTW994ukhn1C67?fbclid=PAZXh0bgNhZW0CMTEAAaf1jKhuyBLTSjCXoZ_j5OmoRGCYHmtvFKBx330kpfOVZ5m40QARucv8N35P0g_aem_MI8IkCsPw_atkdmiv5yH5A"
+        target="_blank"
+      >
         <li>
           <Spotify className="w-5" />
         </li>
