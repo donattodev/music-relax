@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import type { ComponentProps, ReactNode } from 'react'
 import { Text } from './text'
 
@@ -7,25 +8,26 @@ type RootCardProps = ComponentProps<'div'> & {
 
 export function Root({ children, ...props }: RootCardProps) {
   return (
-    <div className="flex flex-col gap-4 w-[134px]" {...props}>
+    <div className="flex flex-col gap-4 w-[150px] flex-shrink-0" {...props}>
       {children}
     </div>
   )
 }
 
-type CoverCardProps = ComponentProps<'img'> & {
+type CoverCardProps = ComponentProps<typeof Image> & {
   url: string
 }
 
 export function Cover({ url, ...props }: CoverCardProps) {
   return (
-    <>
-      {url ? (
-        <img {...props} src={url} alt="" className="size-32 rounded-md" />
-      ) : (
-        <div className="size-32 bg-background-950 rounded-md" />
-      )}
-    </>
+    <Image
+      {...props}
+      src={url.replace(/^\.\//, '/')}
+      width={150}
+      height={150}
+      alt=""
+      className="rounded-md h-32 w-32 object-cover"
+    />
   )
 }
 
