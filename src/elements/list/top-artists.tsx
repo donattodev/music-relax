@@ -39,7 +39,7 @@ export function TopArtists() {
 
       <div
         ref={scrollRef}
-        className="flex gap-2 w-full overflow-x-scroll scrollbar-thin scrollbar-thumb-gray-500 cursor-grab active:cursor-grabbing select-none"
+        className="flex  w-full max-sm:overflow-x-scroll overflow-hidden scrollbar-thin scrollbar-thumb-gray-500 cursor-grab active:cursor-grabbing select-none"
         onMouseDown={e => handleDragStart(e.pageX)}
         onMouseUp={handleDragEnd}
         onMouseLeave={handleDragEnd}

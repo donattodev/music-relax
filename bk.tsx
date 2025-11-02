@@ -75,14 +75,14 @@ export function PlayerHome() {
 
   return (
     <Box className="col-span-4 px-0 py-0 flex flex-col justify-between max-sm:col-span-6">
-      <div className="hidden sm:flex flex-col items-center justify-start gap-6  w-full">
-        <div className="flex justify-between w-full p-5">
+      <div className="flex flex-col items-center justify-start gap-6 p-5 w-full">
+        <div className="flex justify-between w-full">
           <span>Player</span>
           <ListMusic className="cursor-pointer" />
         </div>
 
-        <div className="flex flex-col gap-6 text-center w-full items-center px-5">
-          <div className="w-full h-56 rounded-md bg-neutral-800 overflow-hidden">
+        <div className="flex flex-col gap-6 text-center w-full items-center">
+          <div className="w-full h-56 rounded-md bg-neutral-800 overflow-hidden max-sm:hidden">
             {currentTrack.url_album && (
               <Image
                 src={currentTrack.url_album.replace(/^\.\//, '/')}
@@ -94,7 +94,7 @@ export function PlayerHome() {
             )}
           </div>
 
-          <hgroup className="flex flex-col gap-2 pb-5">
+          <hgroup className="flex flex-col gap-2">
             <h2 className="text-[28px] font-bold">{currentTrack.album}</h2>
             <h3 className="text-sm font-bold">{currentTrack.artists}</h3>
             <h3 className="text-sm text-primary font-bold">
@@ -112,64 +112,23 @@ export function PlayerHome() {
                 }}
               />
             </div>
-            <span>{formatTime(audioRef.current?.duration || 0)}</span>
+            <span>{formatTime(audioRef.current?.duration || 0)}</span>{' '}
           </div>
-        </div>
-
-        <div className="bg-primary flex items-center justify-center w-full py-5">
-          <ul className="flex items-center gap-8 text-white">
-            <li>
-              <Repeat2 />
-            </li>
-            <li className="cursor-pointer" onClick={handlePrev}>
-              <SkipBack />
-            </li>
-            <li
-              className="bg-white size-14 flex items-center justify-center rounded-md cursor-pointer"
-              onClick={togglePlay}
-            >
-              {isPlaying ? (
-                <Pause className="text-primary" />
-              ) : (
-                <Play className="text-primary" />
-              )}
-            </li>
-            <li className="cursor-pointer" onClick={handleNext}>
-              <SkipForward />
-            </li>
-            <li>
-              <X />
-            </li>
-          </ul>
         </div>
       </div>
 
-      <div className="sm:hidden fixed bottom-0 left-0 w-full bg-primary text-white z-50 flex items-center justify-between px-4 py-3 shadow-lg">
-        <div className="flex items-center gap-3">
-          {currentTrack.url_album && (
-            <Image
-              src={currentTrack.url_album.replace(/^\.\//, '/')}
-              alt={currentTrack.album}
-              width={50}
-              height={50}
-              className="object-cover rounded-md"
-            />
-          )}
-          <div className="flex flex-col">
-            <span className="text-sm font-bold">{currentTrack.album}</span>
-            <span className="text-xs text-white/80">
-              {currentTrack.artists}
-            </span>
-          </div>
-        </div>
+      <div className="bg-primary flex items-center justify-center w-full py-5">
+        <ul className="flex items-center gap-8 text-white">
+          <li>
+            <Repeat2 />
+          </li>
 
-        <div className="flex items-center gap-3">
-          <button type="button" onClick={handlePrev}>
+          <li className="cursor-pointer" onClick={handlePrev}>
             <SkipBack />
-          </button>
-          <button
-            type="button"
-            className="bg-white p-2 rounded-md flex items-center justify-center"
+          </li>
+
+          <li
+            className="bg-white size-14 flex items-center justify-center rounded-md cursor-pointer"
             onClick={togglePlay}
           >
             {isPlaying ? (
@@ -177,11 +136,16 @@ export function PlayerHome() {
             ) : (
               <Play className="text-primary" />
             )}
-          </button>
-          <button type="button" onClick={handleNext}>
+          </li>
+
+          <li className="cursor-pointer" onClick={handleNext}>
             <SkipForward />
-          </button>
-        </div>
+          </li>
+
+          <li>
+            <X />
+          </li>
+        </ul>
       </div>
 
       <audio ref={audioRef} src={currentTrack.src} />

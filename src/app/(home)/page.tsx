@@ -18,7 +18,7 @@ export default function Home() {
       <main className="flex-1 overflow-auto transition-all duration-300">
         <Hero />
 
-        <div className="p-6">
+        <div className="p-4">
           <div
             className={`grid gap-4 max-sm:grid-cols-1 ${
               sidebarCollapsed ? 'grid grid-cols-10' : 'grid grid-cols-10'

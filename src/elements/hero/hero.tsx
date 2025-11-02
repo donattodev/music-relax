@@ -6,7 +6,7 @@ import { Topbar } from '../navs/topbar'
 
 export function Hero() {
   return (
-    <header className="bg-[url(../assets/hero/hero-cover.png)] bg-cover h-96 w-full">
+    <header className="bg-[url(../assets/hero/hero-cover.png)] bg-cover h-96 w-full max-sm:bg-right">
       <Topbar />
 
       <div className="px-6 pb-8 pt-20 flex flex-col gap-6">

@@ -26,7 +26,7 @@ export function Cover({ url, ...props }: CoverCardProps) {
       width={150}
       height={150}
       alt=""
-      className="rounded-md h-32 w-32 object-cover"
+      className="rounded-md size-32 object-cover"
     />
   )
 }
