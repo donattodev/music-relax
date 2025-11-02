@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import "./animate.css";
+
+@theme {
+  --color-background-950: #0c0b0e;
+  --color-background-900: #1a191f;
+  --color-background-700: #302e38;
+  --color-background-500: #717171;
+
+  --color-primary: #f2a20c;
+  --color-primary-950: #b38736;
+
+  --color-orange: #f2650c;
+  --color-violet: #603f73;
+
+  --font-sans: var(--font-inter);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #010101;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #313131;
+  border-radius: 25px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media only screen and (max-width: 600px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
