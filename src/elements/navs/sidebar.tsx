@@ -56,6 +56,7 @@ export default function Sidebar({ onCollapseChange }: SidebarProps) {
         >
           <Link
             href="/"
+            aria-label="Ir para a página inicial"
             className="flex items-center justify-center transition-transform hover:scale-110"
           >
             <Logo
@@ -66,6 +67,7 @@ export default function Sidebar({ onCollapseChange }: SidebarProps) {
 
           <button
             type="button"
+            aria-label={collapsed ? "Expandir menu" : "Recolher menu"}
             onClick={toggleSidebar}
             className={`
                     group p-2.5 rounded-2xl transition-all duration-300 shadow-lg cursor-pointer flex items-center justify-center

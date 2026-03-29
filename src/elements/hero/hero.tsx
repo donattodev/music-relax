@@ -1,5 +1,7 @@
 import { Heading } from '@/components/ui/heading'
 import { Text } from '@/components/ui/text'
+import Image from 'next/image'
+import heroCover from '@/assets/hero/hero-cover.png'
 import Link from 'next/link'
 import { LikeHeroHeart } from '../like/like-hero-heart'
 import { Topbar } from '../navs/topbar'
@@ -7,8 +9,14 @@ import { Topbar } from '../navs/topbar'
 export function Hero() {
   return (
     <header className="relative min-h-[420px] md:h-[50vh] w-full bg-background-950">
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[url(../assets/hero/hero-cover.png)] bg-cover bg-center max-sm:bg-right" />
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <Image 
+          src={heroCover} 
+          alt="Hero Cover" 
+          fill 
+          priority
+          className="object-cover object-center max-sm:object-right" 
+        />
 
         <div className="absolute inset-0 bg-linear-to-b from-transparent via-zinc-950/40 to-zinc-950/90" />
 

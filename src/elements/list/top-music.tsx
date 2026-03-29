@@ -27,6 +27,7 @@ export function TopMusic() {
           </div>
           <Link
             href="/albuns"
+            aria-label="Ver mais músicas"
             className="w-fit px-6 py-3 border border-white/5 bg-white/5 hover:bg-white/10 rounded-full text-white/60 hover:text-white transition-all text-[9.5px] font-black uppercase tracking-[0.25em] shadow-2xl backdrop-blur-md active:scale-95 md:bg-transparent md:border-0 md:p-0 md:shadow-none md:backdrop-blur-none md:hover:bg-transparent"
           >
             <span className="md:hidden">Explorar Músicas</span>
@@ -89,7 +90,7 @@ export function TopMusic() {
                   </div>
 
                   <div className="flex items-center gap-6">
-                    <span className="hidden md:block text-[10px] font-bold text-white/20 uppercase tracking-widest group-hover:text-white/40 transition-colors">
+                    <span className="hidden md:block text-[10px] font-bold text-white/50 uppercase tracking-widest group-hover:text-white/70 transition-colors">
                       {album}
                     </span>
                     <span className="text-[11px] font-bold tabular-nums text-white/60 group-hover:text-primary transition-colors">

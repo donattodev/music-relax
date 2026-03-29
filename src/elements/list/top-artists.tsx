@@ -1,4 +1,5 @@
 import { databaseMusic } from '@/data/database-music'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRef, useState } from 'react'
 
@@ -55,6 +56,7 @@ export function TopArtists() {
           </div>
           <Link
             href="/artistas"
+            aria-label="Ver mais artistas"
             className="w-fit px-6 py-3 border border-white/5 bg-white/5 hover:bg-white/10 rounded-full text-white/60 hover:text-white transition-all text-[9.5px] font-black uppercase tracking-[0.25em] shadow-2xl backdrop-blur-md active:scale-95 md:bg-transparent md:border-0 md:p-0 md:shadow-none md:backdrop-blur-none md:hover:bg-transparent"
           >
             <span className="md:hidden">Explorar Artistas</span>
@@ -80,14 +82,15 @@ export function TopArtists() {
                       {/* Animated Skeleton Gradient */}
                       <div className="absolute inset-0 bg-linear-to-tr from-zinc-800 via-zinc-950 to-zinc-800 animate-pulse" />
 
-                      <img
+                      <Image
+                        fill
                         src={url_album_minimal.replace(/^\.\//, '/')}
                         alt={`Foto de ${artists.join(', ')}`}
                         draggable={false}
-                        className="size-full object-cover transition-all duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100 grayscale group-hover:grayscale-0"
+                        className="object-cover transition-all duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100 grayscale group-hover:grayscale-0"
                       />
 
-                      <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/60 group-hover:to-black/20 transition-all duration-500" />
+                      <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/60 group-hover:to-black/20 transition-all duration-500 z-10" />
 
                       {/* Floating Play Button */}
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 bg-primary/10 backdrop-blur-[2px]">

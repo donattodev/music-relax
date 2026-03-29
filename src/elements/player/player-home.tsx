@@ -99,11 +99,12 @@ export function PlayerHome() {
 
       <div className="hidden sm:flex flex-col  gap-8 relative z-10">
         <div className="flex justify-between items-center w-full">
-          <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/30">
+          <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/50">
             Tocando Agora
           </span>
           <button
             type="button"
+            aria-label="Ver playlist"
             className="text-white/40 hover:text-white transition-colors cursor-pointer"
           >
             <ListMusic size={20} />
@@ -131,7 +132,7 @@ export function PlayerHome() {
               <h3 className="text-xs font-bold text-primary tracking-widest uppercase">
                 {currentTrack.artists.join(', ')}
               </h3>
-              <h4 className="text-[10px] text-white/20 font-medium">
+              <h4 className="text-[10px] text-white/50 font-medium">
                 Álbum: {currentTrack.album}
               </h4>
             </hgroup>
@@ -146,7 +147,7 @@ export function PlayerHome() {
                 />
                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover/progress:opacity-100 transition-opacity" />
               </div>
-              <div className="flex justify-between text-[10px] font-bold tabular-nums text-white/30">
+              <div className="flex justify-between text-[10px] font-bold tabular-nums text-white/60">
                 <span>{formatTime(currentTime)}</span>
                 <span>{formatTime(audioRef.current?.duration || 0)}</span>
               </div>
@@ -158,7 +159,8 @@ export function PlayerHome() {
           <div className="flex items-center justify-center gap-10">
             <button
               type="button"
-              className={`transition-colors cursor-pointer ${isLooping ? 'text-primary' : 'text-white/20 hover:text-white'}`}
+              aria-label={isLooping ? "Desativar repetição" : "Ativar repetição"}
+              className={`transition-colors cursor-pointer ${isLooping ? 'text-primary' : 'text-white/40 hover:text-white'}`}
               onClick={toggleLoop}
             >
               <Repeat2 size={20} />
@@ -166,6 +168,7 @@ export function PlayerHome() {
             <div className="flex items-center gap-8">
               <button
                 type="button"
+                aria-label="Música anterior"
                 className="text-white/60 hover:text-white hover:scale-110 transition-all cursor-pointer"
                 onClick={handlePrev}
               >
@@ -173,6 +176,7 @@ export function PlayerHome() {
               </button>
               <button
                 type="button"
+                aria-label={isPlaying ? "Pausar música" : "Tocar música"}
                 className="bg-primary size-14 flex items-center justify-center rounded-full cursor-pointer hover:scale-110 hover:shadow-[0_0_30px_rgba(242,162,12,0.4)] transition-all"
                 onClick={togglePlay}
               >
@@ -184,6 +188,7 @@ export function PlayerHome() {
               </button>
               <button
                 type="button"
+                aria-label="Próxima música"
                 className="text-white/60 hover:text-white hover:scale-110 transition-all cursor-pointer"
                 onClick={handleNext}
               >
@@ -192,7 +197,8 @@ export function PlayerHome() {
             </div>
             <button
               type="button"
-              className="text-white/40 hover:text-white transition-colors cursor-pointer"
+              aria-label={isMuted ? "Desativar mudo" : "Ativar mudo"}
+              className="text-white/60 hover:text-white transition-colors cursor-pointer"
               onClick={toggleMute}
             >
               {isMuted ? <VolumeX size={20} className="text-red-500" /> : <Volume2 size={20} />}
