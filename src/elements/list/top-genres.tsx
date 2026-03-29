@@ -1,51 +1,87 @@
-import { Box } from '@/components/ui/box'
-import { Text } from '@/components/ui/text'
 import { databaseMusic } from '@/data/database-music'
+import { Music } from 'lucide-react'
 import Link from 'next/link'
+
+const slugify = (text: string) => {
+  return (
+    text
+      .toLowerCase()
+      .normalize('NFD')
+      // biome-ignore lint/suspicious/noMisleadingCharacterClass: <explanation>
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^\w\s-]/g, '')
+      .replace(/[\s_-]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+  )
+}
 
 export function TopGenres() {
   const genresToShow = databaseMusic.slice(0, 5)
   const total = genresToShow.length
 
   return (
-    <Box className="col-span-2 flex flex-col gap-8 max-sm:hidden">
-      <div className="flex justify-between w-full">
-        <Text>Genres</Text>
-        <Link href="/" className="text-neutral-500 text-sm">
-          Ver todos
-        </Link>
+    <div className="p-8 bg-zinc-900/40 backdrop-blur-3xl border border-white/5 rounded-[2.5rem] shadow-2xl relative overflow-hidden transition-all duration-300 group/container h-full">
+      {/* Background Glow */}
+      <div className="absolute top-0 right-0 size-64 bg-primary/5 blur-[100px] pointer-events-none group-hover/container:bg-primary/10 transition-colors duration-700" />
+
+      <div className="relative z-10 flex flex-col w-full gap-8">
+        <div className="flex justify-between items-end w-full px-2">
+          <div className="space-y-1">
+            <h2 className="text-2xl font-black tracking-tight uppercase italic">
+              Descobrir <span className="text-primary">Gêneros</span>
+            </h2>
+            <p className="text-xs text-white/30 font-bold uppercase tracking-widest">
+              Sintonize sua vibe
+            </p>
+          </div>
+          <Link
+            href="/playlists"
+            className="px-5 py-2.5 border border-white/5 bg-white/5 hover:bg-white/10 rounded-full text-white/40 hover:text-white transition-all text-[10px] font-black uppercase tracking-[0.2em]"
+          >
+            Explorar Tudo
+          </Link>
+        </div>
+
+        <ul className="grid grid-cols-2 gap-4 w-full">
+          {databaseMusic.slice(0, 5).map(({ id, genres }, index) => {
+            const colors = [
+              'from-blue-600/20 to-blue-400/20 text-blue-400 border-blue-400/10',
+              'from-purple-600/20 to-purple-400/20 text-purple-400 border-purple-400/10',
+              'from-primary/20 to-yellow-400/20 text-primary border-primary/10',
+              'from-green-600/20 to-green-400/20 text-green-400 border-green-400/10',
+              'from-pink-600/20 to-pink-400/20 text-pink-400 border-pink-400/10',
+            ]
+
+            const colorClass = colors[index % colors.length]
+            const isLast = index === 4
+            const genreSlug = slugify(genres)
+
+            return (
+              <li key={id} className={`${isLast ? 'col-span-2' : ''}`}>
+                <Link
+                  href={`/playlist/${genreSlug}`}
+                  className={`
+                    relative group flex items-center justify-center p-6 rounded-2xl border transition-all duration-300 cursor-pointer overflow-hidden
+                    bg-linear-to-br ${colorClass}
+                    ${isLast ? 'py-8' : ''}
+                    hover:scale-[1.02] hover:shadow-2xl w-full
+                  `}
+                >
+                  <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <span className="font-black text-[10px] uppercase tracking-[0.3em] relative z-10">
+                    {genres}
+                  </span>
+
+                  {/* Subtle background icon/shape */}
+                  <div className="absolute -right-2 -bottom-2 size-12 opacity-10 group-hover:scale-150 transition-transform duration-700">
+                    <Music size={48} />
+                  </div>
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
       </div>
-
-      <ul className="grid grid-cols-2 gap-4 w-full">
-        {genresToShow.map(({ id, genres }, index) => {
-          const isLast = index === total - 1
-          const isOdd = total % 2 !== 0
-          const shouldSpanFull = isOdd && isLast
-
-          const colors = [
-            'bg-blue-500',
-            'bg-pink-500',
-            'bg-primary',
-            'bg-green-500',
-            'bg-orange-500',
-            'bg-purple-500',
-            'bg-teal-500',
-          ]
-
-          const bgColor = colors[index % colors.length]
-
-          return (
-            <li
-              key={id}
-              className={`${bgColor} ${
-                shouldSpanFull ? 'col-span-2' : ''
-              } text-white w-full flex items-center justify-center rounded-md px-6 py-4`}
-            >
-              <span>{genres}</span>
-            </li>
-          )
-        })}
-      </ul>
-    </Box>
+    </div>
   )
 }

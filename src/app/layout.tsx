@@ -10,11 +10,45 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Music Relax',
-  description: '',
-  category: '',
-  creator: '',
-  keywords: ['', '', ''],
+  title: 'Music Relax | Portfólio Felippe Donatto',
+  description:
+    'Music Relax é um projeto de streaming de música do portfólio de Felippe Donatto (Donatto Dev). Explore músicas relaxantes com uma interface premium e moderna.',
+  category: 'music',
+  creator: 'Felippe Donatto (Donatto Dev)',
+  authors: [{ name: 'Felippe Donatto', url: 'https://donattodev.com.br' }],
+  publisher: 'Donatto Dev',
+  keywords: [
+    'Music Relax',
+    'Felippe Donatto',
+    'Donatto Dev',
+    'Portfólio',
+    'Streaming de Música',
+    'UI/UX Design',
+    'Next.js',
+    'React',
+    'Desenvolvedor Frontend',
+    'Trilha Sonora Relaxante',
+  ],
+  openGraph: {
+    title: 'Music Relax | Portfólio Felippe Donatto',
+    description:
+      'Explore o projeto Music Relax, uma experiência premium de streaming de música criada por Felippe Donatto.',
+    url: 'https://music-relax.vercel.app',
+    siteName: 'Music Relax',
+    locale: 'pt-BR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Music Relax | Portfólio Felippe Donatto',
+    description:
+      'Projeto de streaming de música do portfólio de Felippe Donatto (Donatto Dev).',
+    creator: '@donattodev',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({

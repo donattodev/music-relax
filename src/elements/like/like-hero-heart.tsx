@@ -23,8 +23,8 @@ export function LikeHeroHeart() {
     >
       <Heart
         className={`
-          w-7 h-7 cursor-pointer transition-all duration-300
-          ${liked ? 'fill-primary stroke-primary animated bounce' : 'fill-none stroke-primary'}
+          w-5 h-5 cursor-pointer transition-all duration-300
+          ${liked ? 'fill-primary stroke-primary scale-110 drop-shadow-[0_0_8px_rgba(242,162,12,0.4)]' : 'fill-none stroke-white/40 hover:stroke-primary'}
         `}
       />
     </button>
