@@ -209,7 +209,7 @@ export function PlayerHome() {
 
 
 
-      <audio ref={audioRef} src={currentTrack.src} />
+      <audio ref={audioRef} src={currentTrack.src} preload="none" />
     </div>
   )
 }
