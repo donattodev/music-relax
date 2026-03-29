@@ -66,14 +66,14 @@ export function MenuResponsivo() {
             </div>
 
             <div className="flex items-center justify-between p-8 relative z-10">
-              <Link href="/" onClick={() => setIsOpen(false)}>
+              <Link href="/" onClick={() => setIsOpen(false)} aria-label="Ir para a página inicial">
                 <Logo className="w-32 h-auto" />
               </Link>
               <button
                 type="button"
                 aria-label="Fechar menu"
                 onClick={() => setIsOpen(false)}
-                className="size-12 bg-white/5 border border-white/5 rounded-2xl flex items-center justify-center text-white/40 hover:text-white transition-all active:rotate-90"
+                className="size-12 bg-white/5 border border-white/5 rounded-2xl flex items-center justify-center text-white/60 hover:text-white transition-all active:rotate-90"
               >
                 <X size={24} />
               </button>

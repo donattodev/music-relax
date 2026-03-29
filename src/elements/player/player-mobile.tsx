@@ -137,6 +137,7 @@ export function PlayerMobile() {
 
             <button
               type="button"
+              aria-label={isPlaying ? "Pausar música" : "Tocar música"}
               className="size-11 bg-primary text-black rounded-lg flex items-center justify-center shadow-[0_0_20px_rgba(242,162,12,0.3)] active:scale-90 transition-all"
               onClick={togglePlay}
             >
@@ -149,8 +150,8 @@ export function PlayerMobile() {
 
             <button
               type="button"
-              aria-label="Pular para a próxima música"
-              className="p-1.5 text-white/30 active:scale-95 transition-colors"
+              aria-label="Próxima música"
+              className="p-1.5 text-white/50 active:scale-95 transition-colors"
               onClick={handleNext}
             >
               <SkipForward size={18} fill="currentColor" />
@@ -188,7 +189,7 @@ export function PlayerMobile() {
                 type="button"
                 aria-label="Fechar player expandido"
                 onClick={() => setIsExpanded(false)}
-                className="p-2 -ml-2 text-white/40 hover:text-white transition-colors"
+                className="p-2 -ml-2 text-white/60 hover:text-white transition-colors"
             >
                 <ChevronDown size={32} />
             </button>

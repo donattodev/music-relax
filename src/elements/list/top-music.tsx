@@ -21,13 +21,13 @@ export function TopMusic() {
             <h2 className="text-2xl font-black tracking-tight uppercase italic leading-none">
               Suas <span className="text-primary">Favoritas</span>
             </h2>
-            <p className="text-[10px] text-white/30 font-bold uppercase tracking-[0.3em]">
-              Baseado no que você ouve
+            <p className="text-[10px] text-white/50 font-bold uppercase tracking-[0.3em]">
+              Sintonize sua Vibe
             </p>
           </div>
           <Link
             href="/albuns"
-            className="w-fit px-6 py-3 border border-white/5 bg-white/5 hover:bg-white/10 rounded-full text-white/40 hover:text-white transition-all text-[9.5px] font-black uppercase tracking-[0.25em] shadow-2xl backdrop-blur-md active:scale-95 md:bg-transparent md:border-0 md:p-0 md:shadow-none md:backdrop-blur-none md:hover:bg-transparent"
+            className="w-fit px-6 py-3 border border-white/5 bg-white/5 hover:bg-white/10 rounded-full text-white/60 hover:text-white transition-all text-[9.5px] font-black uppercase tracking-[0.25em] shadow-2xl backdrop-blur-md active:scale-95 md:bg-transparent md:border-0 md:p-0 md:shadow-none md:backdrop-blur-none md:hover:bg-transparent"
           >
             <span className="md:hidden">Explorar Tudo</span>
             <span className="hidden md:block">Ver Mais</span>
@@ -82,7 +82,7 @@ export function TopMusic() {
                       >
                         {music}
                       </Link>
-                      <span className="text-[10px] font-bold text-white/30 uppercase tracking-widest truncate">
+                      <span className="text-[10px] font-bold text-white/50 uppercase tracking-widest truncate">
                         {artists.join(', ')}
                       </span>
                     </div>
@@ -92,13 +92,13 @@ export function TopMusic() {
                     <span className="hidden md:block text-[10px] font-bold text-white/20 uppercase tracking-widest group-hover:text-white/40 transition-colors">
                       {album}
                     </span>
-                    <span className="text-[11px] font-bold tabular-nums text-white/40 group-hover:text-primary transition-colors">
+                    <span className="text-[11px] font-bold tabular-nums text-white/60 group-hover:text-primary transition-colors">
                       {formatDuration(duration)}
                     </span>
                     <button
                       type="button"
                       aria-label="Adicionar à minha biblioteca"
-                      className="opacity-0 group-hover:opacity-100 p-2 rounded-lg bg-white/5 text-white/40 hover:text-white hover:bg-white/10 transition-all cursor-pointer"
+                      className="opacity-0 group-hover:opacity-100 p-2 rounded-lg bg-white/5 text-white/60 hover:text-white hover:bg-white/10 transition-all cursor-pointer"
                     >
                       <Plus size={14} />
                     </button>
