@@ -129,7 +129,8 @@ export function PlayerMobile() {
           <div className="flex items-center gap-1.5 shrink-0 ml-2">
             <button
               type="button"
-              className="p-1.5 text-white/30 active:scale-95 transition-colors"
+              aria-label="Música anterior"
+              className="p-1.5 text-white/50 active:scale-95 transition-colors"
               onClick={handlePrev}
             >
               <SkipBack size={18} fill="currentColor" />

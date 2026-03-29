@@ -57,7 +57,7 @@ export function TopArtists() {
             href="/artistas"
             className="w-fit px-6 py-3 border border-white/5 bg-white/5 hover:bg-white/10 rounded-full text-white/60 hover:text-white transition-all text-[9.5px] font-black uppercase tracking-[0.25em] shadow-2xl backdrop-blur-md active:scale-95 md:bg-transparent md:border-0 md:p-0 md:shadow-none md:backdrop-blur-none md:hover:bg-transparent"
           >
-            <span className="md:hidden">Explorar Tudo</span>
+            <span className="md:hidden">Explorar Artistas</span>
             <span className="hidden md:block">Ver Mais</span>
           </Link>
         </div>
