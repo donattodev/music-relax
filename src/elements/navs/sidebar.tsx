@@ -182,8 +182,8 @@ export default function Sidebar({ onCollapseChange }: SidebarProps) {
               <p className="text-[9px] font-black uppercase tracking-[0.3em] text-white/20">
                 Music Relax
               </p>
-              <Link 
-                href="https://donattodev.com.br" 
+              <Link
+                href="https://donattodev.com.br"
                 target="_blank"
                 className="text-[9px] font-medium text-white/10 hover:text-primary transition-colors duration-300"
               >
@@ -192,7 +192,11 @@ export default function Sidebar({ onCollapseChange }: SidebarProps) {
             </div>
           </div>
         ) : (
-          <Link href="https://donattodev.com.br" target="_blank" className="relative group">
+          <Link
+            href="https://donattodev.com.br"
+            target="_blank"
+            className="relative group"
+          >
             <div className="size-1.5 bg-primary/20 rounded-full shadow-[0_0_10px_rgba(242,162,12,0.3)] animate-pulse group-hover:bg-primary group-hover:scale-150 transition-all duration-300" />
             <span className="absolute left-[30px] top-1/2 -translate-y-1/2 px-2 py-1 bg-zinc-900 text-white text-[8px] font-bold rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-300 whitespace-nowrap">
               Donatto Dev

@@ -44,20 +44,21 @@ export function TopArtists() {
       <div className="absolute top-0 right-0 size-64 bg-primary/5 blur-[100px] pointer-events-none group-hover/container:bg-primary/10 transition-colors duration-700" />
 
       <div className="relative z-10 flex flex-col w-full gap-8">
-        <div className="flex justify-between items-end w-full px-2">
+        <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-end w-full px-2 gap-6 sm:gap-0">
           <div className="space-y-1">
-            <h2 className="text-2xl font-black tracking-tight uppercase italic">
+            <h2 className="text-2xl font-black tracking-tight uppercase italic leading-none">
               Artistas em <span className="text-primary">Destaque</span>
             </h2>
-            <p className="text-xs text-white/30 font-bold uppercase tracking-widest">
+            <p className="text-[10px] text-white/30 font-bold uppercase tracking-[0.3em]">
               O que há de novo no seu radar
             </p>
           </div>
           <Link
             href="/artistas"
-            className="px-5 py-2.5 border border-white/5 bg-white/5 hover:bg-white/10 rounded-full text-white/40 hover:text-white transition-all text-[10px] font-black uppercase tracking-[0.2em]"
+            className="w-fit px-6 py-3 border border-white/5 bg-white/5 hover:bg-white/10 rounded-full text-white/40 hover:text-white transition-all text-[9.5px] font-black uppercase tracking-[0.25em] shadow-2xl backdrop-blur-md active:scale-95 md:bg-transparent md:border-0 md:p-0 md:shadow-none md:backdrop-blur-none md:hover:bg-transparent"
           >
-            Explorar Tudo
+            <span className="md:hidden">Explorar Tudo</span>
+            <span className="hidden md:block">Ver Mais</span>
           </Link>
         </div>
 

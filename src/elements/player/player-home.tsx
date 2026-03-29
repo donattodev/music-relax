@@ -10,6 +10,8 @@ import {
   Repeat2,
   SkipBack,
   SkipForward,
+  Volume2,
+  VolumeX,
   X,
 } from 'lucide-react'
 import Image from 'next/image'
@@ -19,6 +21,8 @@ export function PlayerHome() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
+  const [isMuted, setIsMuted] = useState(false)
+  const [isLooping, setIsLooping] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
   const currentTrack = databaseMusic[currentIndex]
@@ -57,6 +61,20 @@ export function PlayerHome() {
     setIsPlaying(true)
   }
 
+  const toggleMute = () => {
+    if (audioRef.current) {
+      audioRef.current.muted = !isMuted
+      setIsMuted(!isMuted)
+    }
+  }
+
+  const toggleLoop = () => {
+    if (audioRef.current) {
+      audioRef.current.loop = !isLooping
+      setIsLooping(!isLooping)
+    }
+  }
+
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     const audio = audioRef.current
@@ -76,8 +94,7 @@ export function PlayerHome() {
   }
 
   return (
-    <Box className="xl:col-span-4  flex flex-col p-6 bg-zinc-900/40 backdrop-blur-3xl border border-white/5 rounded-4xl shadow-2xl relative overflow-hidden group">
-      {/* Background Glow */}
+    <div className="xl:col-span-4 flex flex-col p-8 bg-zinc-900/40 backdrop-blur-3xl border border-white/5 rounded-[2.5rem] shadow-2xl relative overflow-hidden group">
       <div className="absolute top-0 right-0 size-64 bg-primary/5 blur-[100px] pointer-events-none" />
 
       <div className="hidden sm:flex flex-col  gap-8 relative z-10">
@@ -119,7 +136,6 @@ export function PlayerHome() {
               </h4>
             </hgroup>
 
-            {/* Progress Bar */}
             <div className="space-y-2 pt-2">
               <div className="relative h-1 w-full bg-white/5 rounded-full overflow-hidden cursor-pointer group/progress">
                 <div
@@ -138,22 +154,22 @@ export function PlayerHome() {
           </div>
         </div>
 
-        {/* Controls */}
-        <div className=" flex flex-col gap-4">
-          <div className="flex items-center justify-center gap-8">
+        <div className="flex flex-col gap-4">
+          <div className="flex items-center justify-center gap-10">
             <button
               type="button"
-              className="text-white/20 hover:text-white transition-colors cursor-pointer"
+              className={`transition-colors cursor-pointer ${isLooping ? 'text-primary' : 'text-white/20 hover:text-white'}`}
+              onClick={toggleLoop}
             >
-              <Repeat2 size={18} />
+              <Repeat2 size={20} />
             </button>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-8">
               <button
                 type="button"
                 className="text-white/60 hover:text-white hover:scale-110 transition-all cursor-pointer"
                 onClick={handlePrev}
               >
-                <SkipBack size={22} fill="currentColor" />
+                <SkipBack size={24} fill="currentColor" />
               </button>
               <button
                 type="button"
@@ -161,9 +177,9 @@ export function PlayerHome() {
                 onClick={togglePlay}
               >
                 {isPlaying ? (
-                  <Pause size={24} fill="black" className="text-black" />
+                  <Pause size={28} fill="black" className="text-black" />
                 ) : (
-                  <Play size={24} fill="black" className="text-black ml-1" />
+                  <Play size={28} fill="black" className="text-black ml-1" />
                 )}
               </button>
               <button
@@ -171,65 +187,23 @@ export function PlayerHome() {
                 className="text-white/60 hover:text-white hover:scale-110 transition-all cursor-pointer"
                 onClick={handleNext}
               >
-                <SkipForward size={22} fill="currentColor" />
+                <SkipForward size={24} fill="currentColor" />
               </button>
             </div>
             <button
               type="button"
-              className="text-white/20 hover:text-white transition-colors cursor-pointer"
+              className="text-white/40 hover:text-white transition-colors cursor-pointer"
+              onClick={toggleMute}
             >
-              <X size={18} />
+              {isMuted ? <VolumeX size={20} className="text-red-500" /> : <Volume2 size={20} />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Sticky Player */}
-      <div className="sm:hidden fixed bottom-6 left-6 right-6 h-20 bg-zinc-900/90 backdrop-blur-xl border border-white/10 rounded-2xl p-3 flex items-center justify-between shadow-2xl z-50 animate-in slide-in-from-bottom-10 duration-700">
-        <div className="flex items-center gap-4 flex-1 min-w-0">
-          <div className="size-14 relative shrink-0 rounded-lg overflow-hidden shadow-lg border border-white/5">
-            {currentTrack.url_album && (
-              <Image
-                src={currentTrack.url_album.replace(/^\.\//, '/')}
-                alt={currentTrack.album}
-                fill
-                className="object-cover"
-              />
-            )}
-          </div>
-          <div className="flex flex-col min-w-0 pr-4">
-            <span className="text-sm font-black truncate">
-              {currentTrack.music}
-            </span>
-            <span className="text-[10px] font-bold text-primary uppercase tracking-wider truncate">
-              {currentTrack.artists.join(', ')}
-            </span>
-          </div>
-        </div>
 
-        <div className="flex items-center gap-2">
-          <button
-            type="button"
-            className="size-12 bg-primary rounded-xl flex items-center justify-center shadow-lg active:scale-95 transition-transform"
-            onClick={togglePlay}
-          >
-            {isPlaying ? (
-              <Pause size={22} fill="black" className="text-black" />
-            ) : (
-              <Play size={22} fill="black" className="text-black ml-1" />
-            )}
-          </button>
-          <button
-            type="button"
-            className="p-2 text-white/40 active:scale-95"
-            onClick={handleNext}
-          >
-            <SkipForward size={22} />
-          </button>
-        </div>
-      </div>
 
       <audio ref={audioRef} src={currentTrack.src} />
-    </Box>
+    </div>
   )
 }

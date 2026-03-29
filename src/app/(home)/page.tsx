@@ -6,20 +6,21 @@ import { TopGenres } from '@/elements/list/top-genres'
 import { TopMusic } from '@/elements/list/top-music'
 import Sidebar from '@/elements/navs/sidebar'
 import { PlayerHome } from '@/elements/player/player-home'
+import { PlayerMobile } from '@/elements/player/player-mobile'
 import { useState } from 'react'
 
 export default function Home() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
 
   return (
-    <div className="flex h-screen bg-background-950 text-white transition-all duration-300">
+    <div className="flex min-h-screen bg-background-950 text-white transition-all duration-300">
       <Sidebar onCollapseChange={setSidebarCollapsed} />
 
-      <main className="flex-1 overflow-auto transition-all duration-300 scrollbar-none">
+      <main className="max-sm:pb-32">
         <Hero />
 
-        <div className="px-8 pb-12">
-          <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 -mt-12 relative z-30">
+        <div className="px-8 pb-12 max-sm:px-4">
+          <div className="grid grid-cols-12 gap-8 -mt-12 max-sm:grid-cols-1">
             <div className="xl:col-span-8 flex flex-col gap-10">
               <section className="animate-in fade-in slide-in-from-bottom-4 duration-700">
                 <TopArtists />
@@ -35,10 +36,14 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="xl:col-span-4 animate-in fade-in slide-in-from-right-4 duration-700 delay-500">
+            <div className="xl:col-span-4 max-xl:hidden animate-in fade-in slide-in-from-right-4 duration-700 delay-500">
               <PlayerHome />
             </div>
           </div>
+        </div>
+
+        <div className="xl:hidden">
+          <PlayerMobile />
         </div>
       </main>
     </div>

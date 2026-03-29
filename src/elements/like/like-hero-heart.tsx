@@ -18,6 +18,7 @@ export function LikeHeroHeart() {
   return (
     <button
       type="button"
+      aria-label={liked ? "Descurtir música" : "Curtir música"}
       onClick={() => setLiked(prev => !prev)}
       className="transition-all duration-300"
     >
